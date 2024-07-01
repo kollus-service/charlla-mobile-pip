@@ -19,6 +19,7 @@
 		477266FE2B6BD298004B0EE1 /* MovieSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477266FD2B6BD298004B0EE1 /* MovieSession.swift */; };
 		477267002B75839E004B0EE1 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477266FF2B75839E004B0EE1 /* MovieView.swift */; };
 		477267022B7CF40F004B0EE1 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477267012B7CF40F004B0EE1 /* VideoPlayer.swift */; };
+		6E113EC12C2C089000C7FA8C /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E113EC02C2C089000C7FA8C /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		477266FD2B6BD298004B0EE1 /* MovieSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSession.swift; sourceTree = "<group>"; };
 		477266FF2B75839E004B0EE1 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		477267012B7CF40F004B0EE1 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		6E113EC02C2C089000C7FA8C /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		477266F42B6BC9FF004B0EE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6E113EC02C2C089000C7FA8C /* WebView.swift */,
 				477266E42B6AC23E004B0EE1 /* PiPlaygroundApp.swift */,
 				477266F22B6AC8F8004B0EE1 /* MoviesCatalogView.swift */,
 				477266FF2B75839E004B0EE1 /* MovieView.swift */,
@@ -203,6 +206,7 @@
 				477266F32B6AC8F8004B0EE1 /* MoviesCatalogView.swift in Sources */,
 				477266F82B6BCB06004B0EE1 /* Movie.swift in Sources */,
 				477267022B7CF40F004B0EE1 /* VideoPlayer.swift in Sources */,
+				6E113EC12C2C089000C7FA8C /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,9 +337,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PiPlayground/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -350,6 +356,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tiago.lopes.PiPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -361,9 +368,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PiPlayground/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -378,6 +387,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tiago.lopes.PiPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

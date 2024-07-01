@@ -10,36 +10,51 @@ import SwiftUI
 
 struct MovieView: View {
     var movieSession: MovieSession
-    
+
     var body: some View {
+        let contentView = ContentView(url: movieSession.movie.charllaUrl)
+
         VStack {
             Text(movieSession.movie.title)
                 .font(.title)
             Text(movieSession.movie.subtitle)
             
             Spacer()
-            
-            switch movieSession.state {
-            case .idle, .loading:
-                ProgressView()
-                    .progressViewStyle(.circular)
-                
-                Spacer()
-                
-            case .loaded(let playerLayer, let pictureInPicture):
-                VideoPlayer(playerLayer: playerLayer)
-                    .frame(maxWidth: .infinity)
-                    .aspectRatio(contentMode: .fit)
-                    .padding()
-                
-                Spacer()
-                
-                button(for: pictureInPicture)
-                
-            case .failed:
-                Text("There was an error loading the player.")
-                Spacer()
+
+            contentView
+
+            Button(action: {
+                contentView.startWebviewPiP()
+            }) {
+                Image(systemName: "pip")
+                    .foregroundColor(.blue)
+                Text("Webview Picture in Picture")
+                    .foregroundColor(.blue)
             }
+            
+            // switch movieSession.state {
+            // case .idle, .loading:
+            //     ProgressView()
+            //         .progressViewStyle(.circular)
+                
+            //     Spacer()
+                
+            // case .loaded(let playerLayer, let pictureInPicture):
+            //     VideoPlayer(playerLayer: playerLayer)
+            //         .frame(maxWidth: .infinity)
+            //         .aspectRatio(contentMode: .fit)
+            //         .padding()
+                
+            //     Spacer()
+                
+            //     button(for: pictureInPicture)
+
+
+
+            // case .failed:
+            //     Text("There was an error loading the player.")
+            //     Spacer()
+            // }
         }
         .task {
             switch movieSession.state {
@@ -64,6 +79,7 @@ struct MovieView: View {
             default:
                 break
             }
+            print("Button tapped")
         } label: {
             HStack {
                 switch pictureInPicture.state {
@@ -90,7 +106,8 @@ struct MovieView: View {
             movie: Movie(
                 title: "Movie Title",
                 subtitle: "Movie Subtitle",
-                url: URL(string: "https://google.com")!
+                url: URL(string: "https://google.com")!,
+                charllaUrl: URL(string: "https://google.com")!
             )
         )
     )

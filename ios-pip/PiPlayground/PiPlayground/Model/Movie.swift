@@ -11,6 +11,7 @@ struct Movie: Equatable, Hashable {
     let title: String
     let subtitle: String
     let url: URL
+    let charllaUrl: URL
 }
 
 extension Movie: Identifiable {
@@ -19,6 +20,9 @@ extension Movie: Identifiable {
 
 extension Movie: CustomStringConvertible {
     var description: String {
-        "Movie 🎬: \(title), \(subtitle), at \(url.description)"
+        """
+        Movie 🎬: \(title), \(subtitle), at \(url.description)
+        Charlla: \(charllaUrl.description)
+        """
     }
 }
