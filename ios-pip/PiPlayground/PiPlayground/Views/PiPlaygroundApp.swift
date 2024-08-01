@@ -11,7 +11,7 @@ import SwiftUI
 struct PiPlaygroundApp: App {
     @State
     var model = Model()
-    
+
     var body: some Scene {
         WindowGroup {
             MoviesCatalogView(model: model)

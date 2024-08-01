@@ -9,13 +9,13 @@ import SwiftUI
 
 struct MoviesCatalogView: View {
     var model: Model
-    
+
     @State
     private var pipRestoreContinuation: CheckedContinuation<Bool, Never>?
-    
+
     @State
     private var presentedMovies = [Movie]()
-    
+
     var body: some View {
         NavigationStack(path: $presentedMovies) {
             VStack(spacing: 0) {
@@ -36,7 +36,7 @@ struct MoviesCatalogView: View {
             }
         }
     }
-    
+
     private var header: some View {
         VStack {
             HStack {
@@ -44,18 +44,18 @@ struct MoviesCatalogView: View {
                 Image(systemName: "video.circle")
             }
             .font(.title)
-            
+
             Divider()
         }
     }
-    
+
     private var movieCatalog: some View {
         List(model.movieCatalog.movies) { movie in
             catalogItem(for: movie)
         }
         .padding(.horizontal)
     }
-    
+
     private func catalogItem(for movie: Movie) -> some View {
         NavigationLink(value: movie) {
             VStack {

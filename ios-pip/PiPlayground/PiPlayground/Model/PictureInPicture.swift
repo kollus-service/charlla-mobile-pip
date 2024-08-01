@@ -19,7 +19,7 @@ import OSLog
     var canBeStarted: Bool {
         state == .inactive
     }
-    
+
     init(playerLayer: AVPlayerLayer) async {
         guard Self.isSupportedByCurrentDevice,
               let _pipController = AVPictureInPictureController(playerLayer: playerLayer) else {
@@ -28,9 +28,9 @@ import OSLog
             super.init()
             return
         }
-        
+
         pipController = _pipController
-        
+
         if await _pipController.isPipPossible {
             state = .inactive
             _pipController.canStartPictureInPictureAutomaticallyFromInline = true
@@ -39,12 +39,12 @@ import OSLog
             logger.notice("Pip is not possible")
             state = .unsupported
         }
-        
+
         super.init()
-        
+
         pipController?.delegate = self
     }
-    
+
     func start() {
         guard state != .unsupported else {
             return
@@ -52,7 +52,7 @@ import OSLog
         logger.debug("Pip starting")
         pipController?.startPictureInPicture()
     }
-    
+
     func stop() {
         guard state != .unsupported else {
             return
@@ -60,7 +60,7 @@ import OSLog
         logger.debug("Pip stopping")
         pipController?.stopPictureInPicture()
     }
-    
+
     enum State {
         case unsupported
         case active
@@ -73,17 +73,17 @@ extension PictureInPicture: AVPictureInPictureControllerDelegate {
         logger.debug("Pip is active")
         state = .active
     }
-    
+
     func pictureInPictureControllerDidStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         logger.debug("Pip is inactive")
         state = .inactive
     }
-    
+
     func pictureInPictureController(_ pictureInPictureController: AVPictureInPictureController, failedToStartPictureInPictureWithError error: Error) {
         logger.error("Pip error: \(error)")
         state = .unsupported
     }
-    
+
     func pictureInPictureController(_ pictureInPictureController: AVPictureInPictureController) async -> Bool {
         guard let playbackRestorer else { return false }
         return await playbackRestorer.restore()
@@ -103,7 +103,7 @@ extension AVPictureInPictureController {
                 cancellable = publisher(for: \.isPictureInPicturePossible)
                     .filter { $0 == false }
                     .receive(on: RunLoop.main)
-                    .timeout(.seconds(1), scheduler: RunLoop.main)
+                    // .timeout(.seconds(1), scheduler: RunLoop.main)
                     .removeDuplicates()
                     .sink(receiveCompletion: { _ in
                         if !wasContinuationResumed {
