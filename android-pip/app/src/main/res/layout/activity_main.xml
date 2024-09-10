@@ -5,11 +5,69 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="2"
-    tools:context=".VideoActivity">
+    tools:context=".VideoActivity"
+    android:id="@+id/videoWebViewLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="500dp" />
+
+    <Button
+        android:id="@+id/banner_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="banners"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/like_on_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="like : true"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/like_off_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="like : false"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/mini_on_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="mini mode : on"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/mini_off_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="mini mode : off"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </LinearLayout>
